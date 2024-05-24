@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'Raleway Medium';
+    src: url(Raleway-Medium.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Raleway Medium', sans-serif;
+}
+
+header {
+    height: 100px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #134c8f;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px !important;
+    margin-left: 20px;
+}
+
+body {
+    background-color: #B6E1F9;
+}
+
+.activitiesContainer {
+    background-color: #B6E1F9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-left: 200px;
+    padding-right: 200px;
+    height: 75%;
+}
+
+footer {
+    height: 60px;
+    background-color: #134c8f;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.RRSS {
+    display: flex;
+    justify-content: center;
+}
+
+.RRSS a i {
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.RRSS a:hover i {
+    color: aqua;
+}
+
+.juego {
+    margin-left: 200px;
+    margin-bottom: 15px;
+    height: 660px;
+    width: 800px;
+}
+
+.juego-container {
+    margin-top: 5px;
+}
+
+.info {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+    max-width: 45%;
+}
+
+.info-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 650px;
+}
+
+.info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.imagesJuego {
+    position: absolute;
+    top: 785px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.hover-shadow {
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.row>.imagesJuego {
+    padding: 0 8px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Crear tres columnas iguales flotantes*/
+.imagesJuego {
+    float: left;
+    width: 33%;
+}
+
+/*Fondo del modal*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*Contenido del modal*/
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 40%;
+}
+
+/* Reducir el tamaño máximo de la imagen dentro del lightbox */
+.mySlides {
+    max-width: 100%;
+    /* Ajusta este valor según tus necesidades */
+}
+
+/*Boton de cerrar*/
+.close {
+    position: absolute;
+    top: 80px;
+    left: 1003px;
+    right: 150px;
+    margin: 10px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+    transform: translate(50%, -50%);
+    /* Centra el botón */
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Ocultar las imagenes por defecto*/
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    opacity: 0;
+}
+
+/*Colocar el boton de siguiente a la derecha*/
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/*Al pasar el color añadir fondo con transparencia negro */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+/* Numero de imagen */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    bottom: 8px;
+}
+
+/* Texto del titulo */
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+img.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal:target .imagesJuego {
+    display: none;
+}
+
+#myModal {
+    display: none;
+}
+
+.modal:target {
+    display: block;
+}
+
+body.lb-disable-scrolling {
+    overflow: hidden;
+}
+
+.lightboxOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.lightbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    text-align: center;
+    line-height: 0;
+    font-weight: normal;
+    outline: none;
+    background: none;
+    max-width: 250px;
+    width: auto;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.lightbox .lb-image {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 3px;
+    border: 4px solid white;
+    /* Image border */
+}
+
+.lightbox a img {
+    border: none;
+}
+
+.lb-outerContainer {
+    position: relative;
+    width: 10px !important;
+    max-width: 10px;
+    height: 10px;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-color: white;
+    /* Background color behind image */
+}
+
+.lb-lightbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    text-align: center;
+    line-height: 0;
+    font-weight: normal;
+    outline: none;
+    background: none;
+}
+
+.lb-outerContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.lb-loader {
+    position: absolute;
+    top: 43%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+}
+
+.lb-cancel {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    background: url(../images/loading.gif) no-repeat;
+}
+
+.lb-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.lb-container>.nav {
+    left: 0;
+}
+
+.lb-nav a {
+    outline: none;
+    background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+}
+
+.lb-prev,
+.lb-next {
+    height: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.lb-nav a.lb-prev {
+    width: 34%;
+    left: 0;
+    float: left;
+    background: url(../images/prev.png) left 48% no-repeat;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+    -o-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-prev:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+
+.lb-nav a.lb-next {
+    width: 64%;
+    right: 0;
+    float: right;
+    background: url(../images/next.png) right 48% no-repeat;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+    -o-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-next:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+
+.lb-dataContainer {
+    margin: 0 auto;
+    padding-top: 5px;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.lb-dataContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.lb-data {
+    padding: 0 4px;
+    color: #ccc;
+}
+
+.lb-data .lb-details {
+    width: 85%;
+    float: left;
+    text-align: left;
+    line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+.lb-data .lb-caption a {
+    color: #4ae;
+}
+
+.lb-data .lb-number {
+    display: block;
+    clear: left;
+    padding-bottom: 1em;
+    font-size: 12px;
+    color: #999999;
+}
+
+.lb-data .lb-close {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/InterfazGame/close.png) top right no-repeat;
+    text-align: right;
+    outline: none;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.lb-data .lb-close:hover {
+    cursor: pointer;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+
+.numbertext {
+    position: absolute;
+    top: 650px;
+    right: 1260px;
+    color: white;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.current-image-text {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.current-image-paragraph {
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+}
